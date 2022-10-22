@@ -238,11 +238,11 @@
 
         <div class="button-main">
             <div class="menu-items" id="menu-items">
-                <a href="NewFile.html" class="button">Home</a>
-                <a href="about.html" class="button">About</a>
-                <a href="archives2.html" class="button">Archives</a>
-                <a href="logio.html" class="button">Login</a>
-                <a href="contact.html" class="button">Contact US</a>
+                <a href="NewFile.jsp" class="button">Home</a>
+                <a href="about.jsp" class="button">About</a>
+                <a href="archives2.jsp" class="button">Archives</a>
+                <a href="logio.jsp" class="button">Login</a>
+                <a href="contact.jsp" class="button">Contact US</a>
             </div>
             <label class="menu-bar" id="menu-bar" for="toggle">&#9776</label>
 
