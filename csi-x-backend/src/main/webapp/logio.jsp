@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="java.sql.*" %>
+
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -211,6 +213,18 @@
 </style>
 
 <body>
+
+    <%
+  
+/*     String username=request.getParameter("uname");
+    String password=request.getParameter("pass");
+     Class.forName("com.mysql.jdbc.Driver");
+Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/csi_main","root","fcrit@123");
+    Statement st=conn.createStatement();
+    ResultSet rs;
+    int x=st.executeUpdate("insert into stu_login values('"+username+"','"+password+"')");  */
+    %>
+
     <nav id="navbar" class="navbar">
 
         <img src="2.png" alt="Girl in a jacket">
@@ -235,15 +249,15 @@
             <div class="shape"></div>
             <div class="shape"></div>
         </div>
-        <form>
+        <form action="login_auth.jsp">
             <h3>Login Here</h3>
 
             <label for="username">Username</label>
-            <input type="text" placeholder="Email or Phone" id="username">
+            <input type="text" name="uname" placeholder="Email or Phone" id="username">
 
             <label for="password">Password</label>
-            <input type="password" placeholder="Password" id="password">
-
+            <input type="password" name="pass" placeholder="Password" id="password">
+           <%out.println("hello"); %>
             <button>Log In</button>
 
         </form>
