@@ -210,12 +210,16 @@
         border-radius: 5px;
         cursor: pointer;
     }
+    #register_btn{
+    margin-top:9px;
+    }
+
 </style>
 
 <body>
 
     <%
-  
+
 /*     String username=request.getParameter("uname");
     String password=request.getParameter("pass");
      Class.forName("com.mysql.jdbc.Driver");
@@ -223,9 +227,20 @@ Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/csi_mai
     Statement st=conn.createStatement();
     ResultSet rs;
     int x=st.executeUpdate("insert into stu_login values('"+username+"','"+password+"')");  */
+    /*for checkeing the valid user)*/
+String username=request.getParameter("uname");
+    String password=request.getParameter("pass");
+     Class.forName("com.mysql.jdbc.Driver");
+     Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/csi_main","root","fcrit@123");
+    Statement st=conn.createStatement();
+    String sql="select *from stu_login where ID='"+username+"' and password='"+password+"'";
+    ResultSet rs = st.executeQuery(sql);
+ 
+    session.setAttribute("display","0");
+    
     %>
 
-    <nav id="navbar" class="navbar">
+    <nav  id="navbar" class="navbar">
 
         <img src="2.png" alt="Girl in a jacket">
 
@@ -257,8 +272,16 @@ Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/csi_mai
 
             <label for="password">Password</label>
             <input type="password" name="pass" placeholder="Password" id="password">
-           <%out.println("hello"); %>
-            <button>Log In</button>
+          
+           <% 
+           
+           
+           
+           
+           %>
+            <button id="stu_login">Log In</button>
+          
+              <button id="register_btn" href="register_auth.jsp">Register</button>22
 
         </form>
     </div>
